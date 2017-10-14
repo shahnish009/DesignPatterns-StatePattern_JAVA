@@ -1,0 +1,51 @@
+package airportSecurityState.util;
+
+import java.io.FileNotFoundException;
+import java.lang.RuntimeException;
+import java.util.ArrayList;
+import java.io.PrintWriter;
+
+public class Results implements StdoutDisplayInterface, FileDisplayInterface{
+	
+	private String outputFile;	
+	private ArrayList<String> storeResults = new ArrayList<String>();
+	
+	/**
+	 * constructor for results
+	 * @param outputFileIN - file for writing Result
+	 */
+	public Results(String outputFileIN) {
+		outputFile = outputFileIN;
+	}
+
+	public void writeToStdout() {
+		for(String op : storeResults) {
+			System.out.println(op);
+		}
+	}
+	
+	/**
+	 * method to write to file
+	 * @throws FileNotFoundException
+	 */
+	public void writeToFile() throws FileNotFoundException {
+		PrintWriter pw = null;
+		try {
+			pw = new PrintWriter(this.outputFile);
+		}
+		catch(FileNotFoundException e) {
+			System.err.println(e + "\nFile Not Found");
+			e.printStackTrace();
+			System.exit(0);
+		}
+		for(String op : storeResults) {
+			pw.println(op);
+		}
+		pw.close();
+	}
+	
+	public void storeNewResult(String s) {
+		storeResults.add(s);
+	}
+
+}
