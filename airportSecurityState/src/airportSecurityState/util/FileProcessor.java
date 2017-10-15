@@ -25,10 +25,8 @@ public class FileProcessor {
 		
 		try {
 			if(sc != null) {
-				String ln;
 				while(sc.hasNext()) {
-				ln = sc.nextLine();
-				return ln;
+					return sc.nextLine();
 				}
 			}
 			else {
@@ -43,7 +41,7 @@ public class FileProcessor {
 		catch(Exception e) {
 			System.err.println(e + " occurred during readLine");
 			e.printStackTrace();
-			System.exit(0);
+			System.exit(1);
 		}
 		return null;
 	}
