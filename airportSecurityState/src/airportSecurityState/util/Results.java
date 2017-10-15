@@ -31,12 +31,12 @@ public class Results implements StdoutDisplayInterface, FileDisplayInterface{
 	public void writeToFile() throws FileNotFoundException {
 		PrintWriter pw = null;
 		try {
-			pw = new PrintWriter(this.outputFile);
+			pw = new PrintWriter(outputFile);
 		}
 		catch(FileNotFoundException e) {
 			System.err.println(e + "\nFile Not Found");
 			e.printStackTrace();
-			System.exit(0);
+			System.exit(1);
 		}
 		for(String op : storeResults) {
 			pw.println(op);
