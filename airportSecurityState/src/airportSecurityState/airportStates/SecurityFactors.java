@@ -10,11 +10,14 @@ public class SecurityFactors {
 	private double avgTraffic = 0;
 	private double avgProhibited = 0;
 	
+	private int flag = 0;
+	
 	public SecurityFactors(double avgTrafficI, double avgProhibitedI) {
 		lowRisk = new LowRisk(this);
 		moderateRisk = new ModerateRisk(this);
 		highRisk = new HighRisk(this);
 		asi = lowRisk;
+		flag = 0;
 		
 		avgTraffic = avgTrafficI;
 		avgProhibited = avgProhibitedI;
@@ -58,5 +61,13 @@ public class SecurityFactors {
 	
 	public AirportStateI getHighRisk() {
 		return highRisk;
+	}
+	
+	public void setFlag(int i) {
+		flag = i;
+	}
+	
+	public int getFlag() {
+		return flag;
 	}
 }
