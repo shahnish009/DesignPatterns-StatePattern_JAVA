@@ -14,6 +14,7 @@ public class FileProcessor {
 	 * @throws FileNotFoundException
 	 */
 	public FileProcessor(String inputFile) throws FileNotFoundException{
+		MyLogger.writeMessage("FileProcessor constructor called", MyLogger.DebugLevel.CONSTRUCTOR);
 		sc = new Scanner(new File(inputFile));
 	}
 
@@ -32,6 +33,7 @@ public class FileProcessor {
 			else {
 				throw new RuntimeException("unable to open file");
 			}
+			
 			if(sc != null) {
 				sc.close();
 				sc = null;
@@ -45,5 +47,4 @@ public class FileProcessor {
 		}
 		return null;
 	}
-
 }
