@@ -15,6 +15,7 @@ public class Results implements StdoutDisplayInterface, FileDisplayInterface{
 	 * @param outputFileIN - file for writing Result
 	 */
 	public Results(String outputFileIN) {
+		MyLogger.writeMessage("Results constructor called", MyLogger.DebugLevel.CONSTRUCTOR);
 		outputFile = outputFileIN;
 	}
 
@@ -34,12 +35,15 @@ public class Results implements StdoutDisplayInterface, FileDisplayInterface{
 			pw = new PrintWriter(outputFile);
 		}
 		catch(FileNotFoundException e) {
-			System.err.println(e + "\nFile Not Found");
+			System.err.println("OutputFile cannot be created");
 			e.printStackTrace();
 			System.exit(1);
 		}
+		
 		for(String op : storeResults) {
 			pw.println(op);
+			
+			MyLogger.writeMessage(op + " is being written to file", MyLogger.DebugLevel.FROM_RESULTS);
 		}
 		pw.close();
 	}
@@ -47,5 +51,4 @@ public class Results implements StdoutDisplayInterface, FileDisplayInterface{
 	public void storeNewResult(String s) {
 		storeResults.add(s);
 	}
-
 }
