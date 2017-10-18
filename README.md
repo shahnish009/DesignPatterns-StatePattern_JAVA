@@ -24,21 +24,20 @@ grade of 0 for the involved assignment for my first offense and that I
 will receive a grade of F for the course for any additional
 offense.”
 
-[Date: 10/03/2017]
+[Date: 10/17/2017]
 
 -----------------------------------------------------------------------
 
 Provide justification for Data Structures used in this assignment in
 term of Big O complexity (time and/or space)
 
-LinkedHashMap for processing input file. O(1) for get() and containsKey()
+Arraylist for storing results, OperationID. O(1) for add() O(N) for 
+remove (We are adding data often but not removing often)
 
-Arraylist for storing results, courses, observers. O(1) for add() 
-O(N) for remove (We are adding data often but not removing often)
-
-Reference: http://infotechgems.blogspot.com/2011/11/java-collections-performance-time.html
 -----------------------------------------------------------------------
-
+SecurityFactors.java is the context class. HighRisk.java , LowRisk.java
+ , ModerateRisk.java are the state classes. Whenever the condition of 
+ the state satisfies, state is changed.
 -----------------------------------------------------------------------
 
 Provide list of citations (urls, etc.) from where you have taken code
@@ -58,3 +57,6 @@ https://stackoverflow.com/questions/1747040/difference-between-java-io-printwrit
 
 5) parseDouble syntax:
 https://www.tutorialspoint.com/java/lang/double_parsedouble.htm
+
+6) Reference for main structure of state classes and context class:
+Head First Design Patterns
