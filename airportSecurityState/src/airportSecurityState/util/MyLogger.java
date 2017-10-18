@@ -4,9 +4,9 @@ public class MyLogger {
 
     /*DEBUG_VALUE=4 [Print to stdout everytime a constructor is called]
       DEBUG_VALUE=3 [Print to stdout everytime the state is changed]
-      DEBUG_VALUE=2 [FIXME: add your own scheme here]
-      DEBUG_VALUE=1 [FIXME: add your own scheme here]
-      DEBUG_VALUE=0 [No output should be printed from the application to stdout. It is ok to write to the output file though" ]
+      DEBUG_VALUE=2 [Print to stdout everytime a result is added to Results]
+      DEBUG_VALUE=1 [Print to stdout everytime result from Results is written to File]
+      DEBUG_VALUE=0 [No output is printed from the application to stdout. It writes to the output file though" ]
     */
 
 	public static enum DebugLevel {
@@ -43,6 +43,6 @@ public class MyLogger {
 	 * @return String
 	 */
     public String toString() {
-	return "Debug Level is " + debugLevel;
+    	return "Debug Level is " + debugLevel;
     }
 }
