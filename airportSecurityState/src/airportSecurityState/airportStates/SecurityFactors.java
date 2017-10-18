@@ -1,5 +1,7 @@
 package airportSecurityState.airportStates;
 
+import airportSecurityState.util.MyLogger;
+
 public class SecurityFactors {
 
 	private AirportStateI lowRisk;
@@ -13,12 +15,15 @@ public class SecurityFactors {
 	private int flag = 0;
 	
 	public SecurityFactors(double avgTrafficI, double avgProhibitedI) {
+		
+		MyLogger.writeMessage("SecurityFactors constructor called", MyLogger.DebugLevel.CONSTRUCTOR);
+		
 		lowRisk = new LowRisk(this);
 		moderateRisk = new ModerateRisk(this);
 		highRisk = new HighRisk(this);
+	
 		asi = lowRisk;
 		flag = 0;
-		
 		avgTraffic = avgTrafficI;
 		avgProhibited = avgProhibitedI;
 	}
