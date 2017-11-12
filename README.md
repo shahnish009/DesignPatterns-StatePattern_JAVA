@@ -14,7 +14,7 @@ ant -buildfile src/build.xml all
 ant -buildfile src/build.xml run -Darg0=<InputFile> -Darg1=<OutputFile> -Darg2=<DebugValue>
 
 -----------------------------------------------------------------------
-Data Structures:
+## Data Structures:
 
 Arraylist for storing results, OperationID. O(1) for add() O(N) for 
 remove (We are adding data often but not removing often)
@@ -23,6 +23,7 @@ remove (We are adding data often but not removing often)
 SecurityFactors.java is the context class. HighRisk.java , LowRisk.java
  , ModerateRisk.java are the state classes. Whenever the condition of 
  the state satisfies, state is changed.
+ 
 -----------------------------------------------------------------------
 
 References and Citations:
